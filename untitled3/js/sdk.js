@@ -66,6 +66,41 @@ var SDK = {
         remove:function (key) {
             window.localStorage.removeItem(this.prefix + key);
         }
+    },
+
+    Course: {
+        getCourse: function (cb) {
+            SDK.request({method: "GET", url: "/course/" + SDK.Storage.load("tokenId")}, cb);
+        }
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 };
