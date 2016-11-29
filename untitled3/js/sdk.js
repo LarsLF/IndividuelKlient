@@ -25,29 +25,9 @@ var SDK = {
     logOut:function() {
         SDK.Storage.remove("tokenId");
         SDK.Storage.remove("tokenUserType");
-        //SDK.Storage.remove("user");
     },
 
-    login: function (username, password, cb) {
-        this.request({
-            data: {
-                cbsMail: username,
-                password: password
-            },
-            url: "/login",
-            method: "POST"
-        }, function (err, data) {
-            //On login-error
-            if (err) return cb(err);
 
-            SDK.Storage.persist("tokenId", data.id);
-            SDK.Storage.persist("tokenUserType", data.type);
-            //SDK.Storage.persist("user", data.user);
-
-            cb(null, data);
-
-        });
-    },
 
     Storage: {
         prefix: "CalenderSDK",
@@ -70,10 +50,40 @@ var SDK = {
 
     Course: {
         getCourse: function (cb) {
-            SDK.request({method: "GET", url: "/course/" + SDK.Storage.load("tokenId")}, cb);
+            SDK.request({
+                method: "GET",
+                url: "/course/" +
+                SDK.Storage.load("tokenId")},
+
+                cb);
         }
+    },
 
+    login: function (username, password, cb) {
+        this.request({
+            data: {
+                cbsMail: username,
+                password: password
+            },
+            url: "/login",
+            method: "POST"
+        }, function (err, data) {
+            //On login-error
+            if (err) return cb(err);
 
+            SDK.Storage.persist("tokenId", data.id);
+            SDK.Storage.persist("tokenUserType", data.type);
+
+            cb(null, data);
+
+        });
+    },
+
+    Lecture: {
+        getLecture: function (cb) {
+            SDK.request({method: "GET", url: "/lecture/BALJO1001U_LA_E16"}, cb);
+
+        }
 
     }
 

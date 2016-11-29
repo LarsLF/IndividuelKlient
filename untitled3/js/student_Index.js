@@ -17,7 +17,7 @@ $(document).ready(function () {
                 "<tr>" +
                 "<td>" + course.displaytext + "</td>" +
                 "<td>" + course.code + "</td>" +
-                "<td><div><button><a href = login.html>" + "Se forelæsninger" + "</button></div></td>" +
+                "<td><div><button><a href = student_Lectures.html>" + "Se forelæsninger" + "</button></div></td>" +
                 "<tr>");
         });
     });
