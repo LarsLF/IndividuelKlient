@@ -18,6 +18,8 @@ $(document).ready(function () {
                 "<td>" + lecture.description + "</td>" +
                 "<td>" + lecture.startDate + "</td>" +
                 "<td>" + lecture.endDate + "</td>" +
+                "<td><div><button><a href = student_Reviews.html>" + "Se evalueringer" + "</button></div></td>" +
+                "<td><div><button><a href = student_Reviews.html>" + "Opret evaluering" + "</button></div></td>" +
                 "<tr>");
         });
     });
