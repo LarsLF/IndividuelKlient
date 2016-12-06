@@ -25,6 +25,8 @@ var SDK = {
     logOut:function() {
         SDK.Storage.remove("tokenId");
         SDK.Storage.remove("tokenUserType");
+
+
     },
 
 
@@ -53,9 +55,7 @@ var SDK = {
             SDK.request({
                 method: "GET",
                 url: "/course/" +
-                SDK.Storage.load("tokenId")},
-
-                cb);
+                SDK.Storage.load("tokenId")}, cb);
         }
     },
 
@@ -74,6 +74,7 @@ var SDK = {
             SDK.Storage.persist("tokenId", data.id);
             SDK.Storage.persist("tokenUserType", data.type);
 
+
             cb(null, data);
 
         });
@@ -81,46 +82,27 @@ var SDK = {
 
     Lecture: {
         getLecture: function (cb) {
-            SDK.request({method: "GET", url: "/lecture/BALJO1001U_LA_E16"}, cb);
-
-        }
+            SDK.request({
+                method: "GET",
+                url: "/lecture/" +
+                SDK.Storage.load("tokenCourseName")}, cb)
+            }
     },
 
     Reviews: {
         getReview: function (cb) {
-            SDK.request({method: "GET", url: "/review/1"}, cb)
+            SDK.request({
+                method: "GET",
+                url: "/review/" +
+                SDK.Storage.load("lectureId")}, cb)
 
+        },
+        create: function (data, cb) {
+            SDK.request({
+                method: "POST",
+                url: "/student/review",
+                data: data}, cb);
         }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    },
 
 };

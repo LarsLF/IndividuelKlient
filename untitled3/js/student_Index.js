@@ -13,19 +13,27 @@ $(document).ready(function () {
         var $coursesTableBody = $("#coursesTableBody");
 
         data.forEach(function (course) {
+
+
             $coursesTableBody.append(
                 "<tr>" +
                 "<td>" + course.displaytext + "</td>" +
                 "<td>" + course.code + "</td>" +
-                "<td><div><button><a href = student_Lectures.html>" + "Se forelæsninger" + "</button></div></td>" +
+                "<td><button id='seLectures'>" + "Se forelæsninger" + "</button></td>" +
                 "<tr>");
+
+            $('button[id^="seLectures"]').on("click", function () {
+                SDK.Storage.persist("tokenCourseName", course.displaytext);
+                window.location.href = 'student_Lectures.html';
+                seLectures.close();
+            })
+
+            });
         });
+
+
     });
 
-
-
-
-});
 
 
 

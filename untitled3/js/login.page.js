@@ -21,8 +21,7 @@ $(document).ready(function () {
             //Login OK!
             //console.log("Succes");
             $("#loginForm").find(".form-group").addClass("has-success");
-
-         if(data.type === "admin")
+            if(data.type === "admin")
              window.location.href = "admin_Index.html";
 
             else if (data.type === "student") {

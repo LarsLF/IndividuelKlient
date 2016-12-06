@@ -15,7 +15,6 @@ $(document).ready(function () {
         data.forEach(function (review) {
             $reviewTableBody.append(
                 "<tr>" +
-                "<td>" + review.userId + "</td>" +
                 "<td>" + review.rating + "</td>" +
                 "<td>" + review.comment + "</td>" +
                 "<tr>");
