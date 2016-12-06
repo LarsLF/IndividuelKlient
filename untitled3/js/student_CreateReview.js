@@ -14,10 +14,11 @@ $(document).ready(function () {
         var review = {
             rating: $("#inputRating").val(),
             comment: $("#inputComment").val(),
+            lectureId: SDK.Storage.load("lectureId"),
+            userId: SDK.Storage.load("tokenId")
         };
 
-
-        SDK.Reviews.create(review, function(err, data){
+        SDK.Reviews.createReview(review, function(err){
             if(err) throw err;
 
         })

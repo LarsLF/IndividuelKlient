@@ -97,10 +97,11 @@ var SDK = {
                 SDK.Storage.load("lectureId")}, cb)
 
         },
-        create: function (data, cb) {
+
+        createReview: function (data, cb) {
             SDK.request({
                 method: "POST",
-                url: "/student/review",
+                url: "/" + SDK.Storage.load("tokenUserType") + "/review",
                 data: data}, cb);
         }
     },

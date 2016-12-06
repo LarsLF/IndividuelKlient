@@ -20,13 +20,19 @@ $(document).ready(function () {
                 "<td>" + lecture.startDate + "</td>" +
                 "<td>" + lecture.endDate + "</td>" +
                 "<td><button id='seReview'>" + "Se evalueringer" + "</button></td>" +
-                "<td><button id='createReview' + lecture.id><a href = student_CreateReview.html>" + "Opret evaluering" + "</button></td>" +
+                "<td><button id='createReview'>" + "Opret evaluering" + "</button></td>" +
                 "<tr>");
 
             $('button[id^="seReview"]').on("click", function () {
                 SDK.Storage.persist("lectureId", lecture.id);
                 window.location.href='student_Reviews.html';
                 seReview.close();
+            })
+
+            $('button[id^="createReview"]').on("click", function () {
+                SDK.Storage.persist("lectureId", lecture.id);
+                window.location.href='student_CreateReview.html';
+                createReview.close();
             })
 
         });
