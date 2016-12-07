@@ -103,7 +103,14 @@ var SDK = {
                 method: "POST",
                 url: "/" + SDK.Storage.load("tokenUserType") + "/review",
                 data: data}, cb);
+        },
+
+        deleteReview: function (data, cb) {
+            SDK.request({
+                method: "DELETE",
+                url: "/" + SDK.Storage.load("tokenUserType") + "/review/" + SDK.Storage.load("reviewId")}, cb);
         }
-    },
+
+    }
 
 };

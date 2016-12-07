@@ -32,11 +32,15 @@
 <div>
     <h1>Opret evaluering</h1>
 </div>
-<fieldset>
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        <form class="form-horizontal" id="reviewForm">
+            <fieldset>
 
     <div class="form-group">
         <div class="col-lg-10">
-            <input type="number" class="form-control" id="inputRating" placeholder="Rating">
+            <input type="number" min="1" max="5" class="form-control" id="inputRating" placeholder="Rating">
         </div>
     </div>
 
@@ -48,8 +52,10 @@
 
     <button class="btn btn-success pull-right" id="tilføjEvaluering">Tilføj evaluering</button>
 
-</fieldset>
-
+            </fieldset>
+        </form>
+    </div>
+</div>
 
 
 <footer class="footer">

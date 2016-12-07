@@ -1,5 +1,5 @@
 /**
- * Created by lefeilberg on 28/11/2016.
+ * Created by lefeilberg on 07/12/2016.
  */
 $(document).ready(function () {
 
@@ -20,28 +20,16 @@ $(document).ready(function () {
                 "<td>" + lecture.startDate + "</td>" +
                 "<td>" + lecture.endDate + "</td>" +
                 "<td><button id='seReview'>" + "Se evalueringer" + "</button></td>" +
-                "<td><button id='createReview'>" + "Opret evaluering" + "</button></td>" +
                 "<tr>");
 
             $('button[id^="seReview"]').on("click", function () {
                 SDK.Storage.persist("lectureId", lecture.id);
-                window.location.href='student_Reviews.html';
+                window.location.href='teacher_Reviews.html';
                 seReview.close();
             });
 
-            $('button[id^="createReview"]').on("click", function () {
-                SDK.Storage.persist("lectureId", lecture.id);
-                window.location.href='student_CreateReview.html';
-                createReview.close();
-            })
-
         });
+
     });
 
-
-
 });
-
-
-
-
