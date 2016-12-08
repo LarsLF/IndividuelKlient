@@ -17,28 +17,28 @@ $(document).ready(function () {
                 "<tr>" +
                 "<td>" + review.rating + "</td>" +
                 "<td>" + review.comment + "</td>" +
-                "<td><button id='sletReview'>" + "Slet Review" + "</button></td>" +
+                "<td><button id='sletReviewEt'>" + "Slet Review" + "</button></td>" +
+                "<td><button id='sletReviewTo'>" + "Sikker?" + "</button></td>" +
                 "<tr>");
 
-            $('button[id^="sletReview"]').on("click", function () {
+            $('button[id^="sletReviewEt"]').on("click", function () {
                 SDK.Storage.persist("reviewId", review.id);
-                sletReview.close();
+                window.location.href='teacher_Reviews.html';
+                sletReviewEt.close();
             });
+            $("#sletReviewTo").on("click", function () {
 
+                SDK.Reviews.deleteReview(SDK.Storage.load("reviewId"), function (err) {
+                    if (err) throw err;
+
+
+                })
+
+            })
+        });
         });
 
-    });
 
-   $("#sletReview").on("click", function () {
-        var review = {
-            lectureId: SDK.Storage.load("reviewId")
-        };
 
-        SDK.Reviews.deleteReview(review, function (err) {
-            if (err) throw err;
-
-        })
-
-    })
 
 });

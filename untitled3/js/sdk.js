@@ -74,7 +74,6 @@ var SDK = {
             SDK.Storage.persist("tokenId", data.id);
             SDK.Storage.persist("tokenUserType", data.type);
 
-
             cb(null, data);
 
         });
@@ -107,10 +106,13 @@ var SDK = {
 
         deleteReview: function (data, cb) {
             SDK.request({
+                data: {
+                    id: data
+                },
                 method: "DELETE",
-                url: "/" + SDK.Storage.load("tokenUserType") + "/review/" + SDK.Storage.load("reviewId")}, cb);
+                url: "/teacher/review/delete"
+                }, cb);
         }
-
     }
 
 };
