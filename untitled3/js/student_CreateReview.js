@@ -18,14 +18,9 @@ $(document).ready(function () {
             userId: SDK.Storage.load("tokenId")
         };
 
-        SDK.Reviews.createReview(review, function(err, success){
-            if (success)
-                    window.alert("Review er nu oprettet");
-
-            else if (err)
-                throw err
-
-        })
+        SDK.Reviews.createReview(review, function(err){
+            if (err) throw err
+        });
 
     })
 

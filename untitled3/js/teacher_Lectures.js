@@ -20,7 +20,7 @@ $(document).ready(function () {
                 "<td>" + lecture.startDate + "</td>" +
                 "<td>" + lecture.endDate + "</td>" +
                 "<td><button id='seReview'>" + "Se evalueringer" + "</button></td>" +
-                "<tr>");
+                "</tr>");
 
             $('button[id^="seReview"]').on("click", function () {
                 SDK.Storage.persist("lectureId", lecture.id);

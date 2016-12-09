@@ -13,16 +13,40 @@ $(document).ready(function () {
         var $reviewTableBody = $("#reviewTableBody");
 
         data.forEach(function (review) {
-            $reviewTableBody.append(
-                "<tr>" +
-                "<td>" + review.rating + "</td>" +
-                "<td>" + review.comment + "</td>" +
-                "<tr>");
+            if(review.userId === SDK.Storage.load("tokenId"))
+                $reviewTableBody.append(
+                    "<tr>" +
+                        "<td>" + review.rating + "</td>" +
+                        "<td>" + review.comment + "</td>" +
+                        "<td><button id='sletReviewEt'>" + "Slet Review" + "</button></td>" +
+                        "<td><button id='sletReviewTo'>" + "Bekræft" + "</button></td>" +
+                    "</tr>");
+            else {
+                $reviewTableBody.append(
+                    "<tr>" +
+                        "<td>" + review.rating + "</td>" +
+                        "<td>" + review.comment + "</td>" +
+                    "</tr>");
+            }
+
+            $('button[id^="sletReviewEt"]').on("click", function () {
+                SDK.Storage.persist("reviewId", review.id);
+                window.location.href='student_Reviews.html';
+                sletReviewEt.close();
+
+
+            });
+            $("#sletReviewTo").on("click", function () {
+
+                SDK.Reviews.deleteReview(SDK.Storage.load("reviewId"), function (err) {
+                    if (err) throw err;
+                    else {
+                        window.location.href='student_Reviews.html';
+                    }
+                })
+            })
         });
     });
-
-
-
 });
 
 

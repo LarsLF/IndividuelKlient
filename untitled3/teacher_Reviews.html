@@ -45,6 +45,20 @@
     </tbody>
 </table>
 
+<div id="antalEvaluering">
+    <h2>Antal deltagelse i lektionsevalueringen</h2>
+
+    <button onclick="antalReviews()">Vis deltagelse</button>
+    <p id="demo"></p>
+
+    <script>
+        function antalReviews() {
+            var x = document.getElementById("reviewTableBody").rows.length;
+            document.getElementById("demo").innerHTML = x + " antal personer deltog i evalueringen";
+        }
+    </script>
+</div>
+
 <footer class="footer">
     <div class="container">
         <p class="text-muted">2016 © All rights reserved - CBS Calender inc.</p>

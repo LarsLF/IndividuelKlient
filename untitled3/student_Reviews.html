@@ -30,7 +30,7 @@
 
 
 <div>
-    <h1>Evalueringer</h1>
+    <h1>Alle evalueringer</h1>
 </div>
 <table class="table">
     <thead>
@@ -43,6 +43,21 @@
 
     </tbody>
 </table>
+
+
+<div class="antalEvaluering">
+<h2>Antal deltagelse i lektionsevalueringen</h2>
+
+<button class="reviewCountButton" onclick="antalReviews()">Vis deltagelse</button>
+<p id="demo"></p>
+
+<script>
+    function antalReviews() {
+        var x = document.getElementById("reviewTableBody").rows.length;
+        document.getElementById("demo").innerHTML = x + " antal personer deltog i evalueringen";
+    }
+</script>
+</div>
 
 <footer class="footer">
     <div class="container">
