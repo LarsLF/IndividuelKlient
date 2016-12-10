@@ -21,9 +21,5 @@ $(document).ready(function () {
         SDK.Reviews.createReview(review, function(err){
             if (err) throw err
         });
-
     })
-
 });
-
-

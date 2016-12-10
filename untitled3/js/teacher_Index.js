@@ -27,9 +27,6 @@ $(document).ready(function () {
                 window.location.href = 'teacher_Lectures.html';
                 seLectures.close();
             })
-
         });
     });
-
-
 });

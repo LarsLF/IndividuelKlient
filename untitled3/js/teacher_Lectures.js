@@ -27,9 +27,6 @@ $(document).ready(function () {
                 window.location.href='teacher_Reviews.html';
                 seReview.close();
             });
-
         });
-
     });
-
 });

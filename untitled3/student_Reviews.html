@@ -35,8 +35,10 @@
 <table class="table">
     <thead>
     <div class="styleOverskrift">
-        <th>Rating</th>
-        <th>Comment</th>
+        <th>Bedømmelse</th>
+        <th>Kommentar</th>
+        <th> </th>
+        <th> </th>
     </div>
     </thead>
     <tbody id="reviewTableBody">
@@ -46,15 +48,15 @@
 
 
 <div class="antalEvaluering">
-<h2>Antal deltagelse i lektionsevalueringen</h2>
+<h2>Antal deltagelser i lektionsevalueringen</h2>
 
-<button class="reviewCountButton" onclick="antalReviews()">Vis deltagelse</button>
+<button class="reviewCountButton" onclick="antalReviews()">Vis deltagelser</button>
 <p id="demo"></p>
 
 <script>
     function antalReviews() {
         var x = document.getElementById("reviewTableBody").rows.length;
-        document.getElementById("demo").innerHTML = x + " antal personer deltog i evalueringen";
+        document.getElementById("demo").innerHTML = x + " personer deltog i evalueringen";
     }
 </script>
 </div>

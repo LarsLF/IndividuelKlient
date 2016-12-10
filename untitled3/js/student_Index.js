@@ -14,7 +14,6 @@ $(document).ready(function () {
 
         data.forEach(function (course) {
 
-
             $coursesTableBody.append(
                 "<tr>" +
                 "<td>" + course.displaytext + "</td>" +
@@ -27,14 +26,6 @@ $(document).ready(function () {
                 window.location.href = 'student_Lectures.html';
                 seLectures.close();
             })
-
-            });
         });
-
-
     });
-
-
-
-
-
+});

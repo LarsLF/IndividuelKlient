@@ -25,11 +25,10 @@ var SDK = {
     logOut:function() {
         SDK.Storage.remove("tokenId");
         SDK.Storage.remove("tokenUserType");
-
-
+        SDK.Storage.remove("lectureId");
+        SDK.Storage.remove("tokenCourseName");
+        SDK.Storage.remove("reviewId")
     },
-
-
 
     Storage: {
         prefix: "CalenderSDK",
@@ -68,7 +67,7 @@ var SDK = {
             url: "/login",
             method: "POST"
         }, function (err, data) {
-            //On login-error
+
             if (err) return cb(err);
 
             SDK.Storage.persist("tokenId", data.id);

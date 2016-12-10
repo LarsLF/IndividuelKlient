@@ -1,6 +1,5 @@
 body{
     background-image: url("http://i.stack.imgur.com/jGlzr.png");
-
 }
 
 .navbar-default{
@@ -37,7 +36,15 @@ h1 {
     font-size: 40px;
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    color: #555;
+}
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
     color: #555;
 }
 
@@ -56,10 +63,13 @@ h1 {
 }
 
 .footer{
-    position: absolute;
-    bottom: 0px;
+    position: relative;
     text-align: center;
-    width: 100%;
+    width: 80%;
+    background:rgba(255,255,255,0.2);
+    border-radius: 7px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .velkomst{
@@ -83,29 +93,11 @@ h1 {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    margin-bottom: 175px;
 }
 
-h2 {
-    font-size: 25px;
-    text-align: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    color: #555;
-}
 
 .reviewCountButton {
     position: absolute;
 }
-
-.antalEvaluering{
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-

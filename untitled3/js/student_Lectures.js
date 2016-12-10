@@ -34,12 +34,8 @@ $(document).ready(function () {
                 window.location.href='student_CreateReview.html';
                 createReview.close();
             })
-
         });
     });
-
-
-
 });
 
 

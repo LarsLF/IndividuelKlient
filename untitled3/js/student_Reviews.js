@@ -33,10 +33,9 @@ $(document).ready(function () {
                 SDK.Storage.persist("reviewId", review.id);
                 window.location.href='student_Reviews.html';
                 sletReviewEt.close();
-
-
             });
-            $("#sletReviewTo").on("click", function () {
+
+            $('button[id^="sletReviewTo"]').on("click", function () {
 
                 SDK.Reviews.deleteReview(SDK.Storage.load("reviewId"), function (err) {
                     if (err) throw err;
@@ -48,7 +47,3 @@ $(document).ready(function () {
         });
     });
 });
-
-
-
-

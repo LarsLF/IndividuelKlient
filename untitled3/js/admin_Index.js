@@ -7,5 +7,4 @@ $(document).ready(function () {
         SDK.logOut();
         window.location.href = "default_Index.html";
     });
-
 });

@@ -23,17 +23,12 @@ $(document).ready(function () {
             $("#loginForm").find(".form-group").addClass("has-success");
             if(data.type === "admin")
              window.location.href = "admin_Index.html";
-
             else if (data.type === "student") {
              window.location.href = "student_Index.html";
             }
-
                 else{
              window.location.href = "teacher_Index.html";
-         }
-
+                }
         });
-
     });
-
 });
